@@ -10,6 +10,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Verify from "./pages/Verify/Verify";
 import MyOrders from "./pages/MyOrders/MyOrders";
+<h3>Version 2 - Deployed via CI/CD</h3>
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
