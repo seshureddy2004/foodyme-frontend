@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: foodyme-config
+data:
+  APP_ENV: "development"
+  APP_NAME: "Foodyme"
+spec:
+env:
+- name: APP_ENV
+  valueFrom:
+    configMapKeyRef:
+      name: foodyme-config
+      key: APP_ENV

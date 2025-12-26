@@ -1,0 +1,125 @@
+.cart {
+    margin-top: 100px;
+}
+
+/* Title row */
+.cart-items-title {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+    align-items: center;
+    color: #9ca3af; /* grey */
+    font-size: max(1vw, 12px);
+}
+
+/* Cart items */
+.cart-items-item {
+    margin: 10px 0px;
+    color: #d4d4d8; /* soft grey text */
+}
+
+.cart-items-item img {
+    width: 50px;
+}
+
+.cart hr {
+    height: 1px;
+    background-color: #2d2d2f; /* dark zinc divider */
+    border: none;
+}
+
+.cart-items-item .cross {
+    cursor: pointer;
+}
+
+/* Bottom section */
+.cart-bottom {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+    gap: max(12vw, 20px);
+}
+
+/* Cart total box */
+.cart-total {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-total-details {
+    display: flex;
+    justify-content: space-between;
+    color: #a1a1a6; /* lighter grey */
+}
+
+.cart-total hr {
+    margin: 10px 0px;
+    background-color: #2d2d2f;
+    border: none;
+}
+
+/* Checkout button */
+.cart-total button {
+    border: none;
+    color: white;
+    background-color: tomato;
+    width: max(15vw, 200px);
+    padding: 12px 0px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Promo code section */
+.cart-promocode {
+    flex: 1;
+}
+
+.cart-promocode p {
+    color: #a1a1a6;
+}
+
+.cart-promocode-input {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f1f21; /* zinc-850 field */
+    border: 1px solid #2a2a2d; /* subtle border */
+    border-radius: 6px;
+}
+
+/* Promo input */
+.cart-promocode-input input {
+    background: transparent;
+    color: #d4d4d8;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+/* Apply button */
+.cart-promocode-input button {
+    width: max(10vw, 150px);
+    padding: 12px 5px;
+    background-color: tomato;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Mobile layout */
+@media (max-width:750px) {
+    .cart-bottom {
+        flex-direction: column-reverse;
+    }
+
+    .cart-promocode {
+        justify-content: start;
+    }
+
+    .cart-items-item p {
+        padding-left: 10px;
+    }
+}

@@ -1,0 +1,61 @@
+.header {
+    height: 34vw;
+    margin: 30px auto;
+    background: url('/header_img.png') no-repeat;
+    background-size: contain;
+    position: relative;
+}
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+    animation: fadeIn 3s;
+}
+
+/* Heading: soft grey */
+.header-contents h2 {
+    font-weight: 500;
+    color: #d4d4d8; /* soft grey */
+    font-size: max(4.5vw, 22px);
+}
+
+/* Description: lighter grey */
+.header-contents p {
+    color: #b3b3b7; /* mild zinc grey */
+    font-size: 1vw;
+}
+
+/* Button: white base, but text tuned for dark theme */
+.header-contents button {
+    border: none;
+    color: #1f1f21; /* zinc text on white button */
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background-color: white;
+    font-size: max(1vw, 13px);
+    border-radius: 50px;
+}
+
+@media (max-width:1050px) {
+    .header-contents {
+        max-width: 45%;
+    }
+}
+
+@media (max-width:750px) {
+    .header-contents {
+        max-width: 65%;
+    }
+    .header-contents p {
+        display: none;
+    }
+    .header-contents button {
+        padding: 2vw 4vw;
+    }
+}

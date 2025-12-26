@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foodyme-frontend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: foodyme
+  template:
+    metadata:
+      labels:
+        app: foodyme
+    spec:
+      containers:
+      - name: foodyme
+        image: seshureddy123/foodyme-frontend:v1
+
+        ports:
+        - containerPort: 80
+
+        # 1️⃣ RESOURCE LIMITS
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "250m"
+            memory: "256Mi"
+
+        # 2️⃣ HEALTH CHECKS (THIS IS WHAT YOU ASKED)
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
+
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          periodSeconds: 5
+
+        # 3️⃣ CONFIGMAP + SECRET (ENV VARIABLES)
+        env:
+        - name: APP_ENV
+          valueFrom:
+            configMapKeyRef:
+              name: foodyme-config
+              key: APP_ENV
+
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: foodyme-secret
+              key: DB_PASSWORD
