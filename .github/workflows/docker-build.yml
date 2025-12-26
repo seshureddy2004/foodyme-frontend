@@ -21,8 +21,9 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t seshureddy123/foodyme-frontend:latest .
+        docker build -t seshureddy123/foodyme-frontend:v2 .
 
     - name: Push Docker image
       run: |
-        docker push seshureddy123/foodyme-frontend:latest
+        docker push seshureddy123/foodyme-frontend:v2
+
